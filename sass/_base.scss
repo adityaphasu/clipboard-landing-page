@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&display=swap');
+
+//  COLORS
+
+$white: hsl(0, 0%, 100%);
+$strong-cyan:hsl(171, 66%, 44%);
+$light-blue: hsl(233, 100%, 69%);
+$dark-grayish-blue: hsl(210, 10%, 33%);
+$grayish-blue: hsl(201, 11%, 66%);
+$pale-gray: hsl(203, 29%, 95%);
+
+// FONT
+
+$font-family: 'Bai Jamjuree', sans-serif;
+$font-weight-bold: 600;
+
+// BREAKPOINTS
+
+$breakpoints: (
+    tablet : 30rem,
+    desktop: 50rem
+);
+
+// MIXINS
+
+@mixin p-top-btm($value){
+    padding-top: $value;
+    padding-bottom: $value;
+}
+
+@mixin margin-auto{
+    margin: auto;
+}
+
+@mixin box-shadow($top, $left, $blur, $color){
+    box-shadow: $top $left $blur darken-color($color);
+}
+
+@mixin flex($justify, $direction){
+    display: flex;
+    justify-content: $justify;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+@mixin grid($value){
+    display: grid;
+    grid-template-columns: repeat(3, $value);
+}
+
+@mixin media-query($mq-breakpoint, $mq-breakpoints: $breakpoints){
+    
+    @if map-has-key($mq-breakpoints, $mq-breakpoint ){
+      $mq-breakpoint: map-get($mq-breakpoints, $mq-breakpoint);
+    }
+
+    @media screen and (min-width: #{$mq-breakpoint}){
+        @content;
+    }
+}
+
+// FUNCTIONS
+
+@function darken-color($color){
+    @return darken($color, 10%);
+}

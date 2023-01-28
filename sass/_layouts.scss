@@ -1,0 +1,239 @@
+@use "./base" as *;
+
+// <-- ================== GLOBAL ================== -->
+
+body{
+    min-height: 100vh;
+    text-align: center;
+    font-size: 1.125rem;
+    font-family: $font-family;
+}
+
+main{
+    padding: 4.2rem 1.7rem; 
+}
+
+section{
+    padding: 2rem 0;
+}
+
+h1,
+h2,
+h3{
+    font-weight: $font-weight-bold;
+    color: $dark-grayish-blue;
+    padding: 1rem 0;
+}
+
+h3{
+  font-size: 1.3rem;
+}
+
+p{   
+    color: $grayish-blue;
+    @include margin-auto; 
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+li{
+    list-style: none;
+}
+
+@include media-query(desktop){
+    
+    h2{
+        font-size: 1.9rem;
+    }
+
+    :is(.about, .access, .features, .cta) > p {
+     width: 45%;
+    }
+
+}  
+
+//  <-- ================== HEADER ================== -->
+
+.header{
+    background-image: url("../assets/images/bg-header-mobile.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 4rem 0;
+
+    &__logo{
+      @include margin-auto;
+      padding: 3rem 0;
+    }
+    
+    &__heading{
+      font-size: 1.5rem;
+
+      @include media-query(desktop) {
+        font-size: 2.2rem;
+      }
+    }
+    
+    @include media-query(tablet){
+        background-size: cover;
+    }
+
+    @include media-query(desktop) {
+        background-image: url("../assets/images/bg-header-desktop.png");
+        background-size: contain;
+
+        &__text{
+            width: 40%;
+        }
+
+    }
+}
+
+//  <-- ==================  ABOUT ================== -->
+
+.about{
+
+    &__img{
+        padding: 4rem 0;   
+
+        @include media-query(desktop){
+         transform: translateX(-15%);
+        }
+    }
+
+    &__info{
+        padding: 1.5rem 0;
+
+        @include media-query(desktop){
+            text-align: left;
+        }
+    }
+
+    @include media-query(desktop){
+        
+        &__content{
+            display: flex;
+        }
+
+        &__column{
+            padding: 4rem 0;
+            width: 25%;
+        }
+    }
+
+}
+
+//  <-- ================== ACCESS ================== -->
+
+.access__img{
+    padding-top: 3rem; 
+
+    @include media-query(desktop){
+        @include margin-auto;
+    }
+}
+
+//  <-- ================== FEATURES ================== -->
+
+.features{
+     
+    &__content{
+        @include flex(null, column);
+        padding: 1rem 0;
+    }
+
+    &__icon{
+        margin: 2rem 0;
+    }
+   
+    @include media-query(desktop){
+        
+        &__info{
+            @include grid(0.27fr);
+            align-items: baseline;
+            justify-content: center;
+            gap: 2.5rem;
+        }
+    }
+}
+
+//  <-- ================== COMPANY ================== -->
+
+.company{
+    
+    padding: 3.2rem 5rem;
+    @include flex(null, column);
+
+    &__heading--sc-only:not(:focus):not(:active){
+        clip: rect(0 0 0 0); 
+        clip-path: inset(50%);
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap; 
+        width: 1px;
+    }
+    
+
+    &__logo{
+        padding: 2rem 0;
+    }
+    
+    @include media-query(desktop){
+        @include flex(space-around, row);
+    }
+}
+
+.cta{
+    padding: 4rem 0;
+}
+
+
+//  <-- ================== FOOTER ================== -->
+
+.footer{
+    @include flex(null, column);
+    padding: 1rem 0;
+    background-color: $pale-gray;
+    color: $dark-grayish-blue;
+
+    &__logo{
+       width: 15%;
+    }
+
+    &__list{
+       padding: 1rem 0;
+
+       li{
+        padding: 0.5rem 0;
+       }
+    }
+
+    &__social{
+        @include flex(null, row);   
+    }
+    
+    &__icon{
+        padding: 1rem;
+    }
+
+    @include media-query(desktop){
+        @include flex(space-evenly, row);
+          
+        &__logo{
+            width: 5%;
+        }
+    
+        &__list{
+            @include grid(150px);
+            grid-template-rows: repeat(2, 1fr);
+            justify-items: start;
+            grid-auto-flow: column;  
+        }  
+       
+    }
+}
+
+
