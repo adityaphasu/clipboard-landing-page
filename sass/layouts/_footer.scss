@@ -1,0 +1,41 @@
+@use "../abstracts" as *;
+
+.footer{
+    @include flex(null, column);
+    padding: 1rem 0;
+    background-color: $pale-gray;
+    color: $dark-grayish-blue;
+
+    &__logo{
+       width: 4rem;
+    }
+
+    &__list{
+       padding: 1rem 0;
+
+       li{
+        padding: 0.5rem 0;
+       }
+    }
+
+    &__social{
+        @include flex(null, row);   
+    }
+    
+    &__icon{
+        padding: 1rem;
+    }
+
+    @include media-query(large){
+
+        @include flex(space-evenly, row);
+        
+        &__list{
+            @include grid(150px);
+            grid-template-rows: repeat(2, 1fr);
+            justify-items: start;
+            grid-auto-flow: column;  
+        }  
+       
+    }
+}

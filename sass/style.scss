@@ -1,17 +1,17 @@
 @charset "utf-8";
 
-// 1. Variables,mixins and Functions
+// 1. Abstracts
 
-@use "base";
+@use "./abstracts";
 
-// 2. CSS reset
+// 2. Base
 
-@use "resets";
+@use "./base";
 
-// 3. Header,Footer and Sections
+// 3. Components
 
-@use "layouts";
+@use "./components";
 
-// 4. Button Component
+// 4. layouts
 
-@use "components";
+@use "./layouts";

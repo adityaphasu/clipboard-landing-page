@@ -1,0 +1,4 @@
+
+@function darken-color($color){
+    @return darken($color, 10%);
+}

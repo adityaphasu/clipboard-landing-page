@@ -1,0 +1,39 @@
+@use "../abstracts" as *;
+
+.header{
+    background-image: url("../assets/images/bg-header-mobile.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 4rem 2rem;
+
+    &__logo{
+      @include margin-auto;
+      padding: 3rem 0;
+    }
+    
+    &__heading{
+      font-size: 1.8rem;
+
+      @include media-query(large) {
+        font-size: 2.2rem;
+      }
+    }
+
+    &__text{
+      padding: 0.1rem;
+    }
+    
+    @include media-query(medium){
+        background-size: cover;
+    }
+
+    @include media-query(large) {
+        background-image: url("../assets/images/bg-header-desktop.png");
+        background-size: contain;
+
+        &__text{
+            width: 35rem;
+        }
+
+    }
+}

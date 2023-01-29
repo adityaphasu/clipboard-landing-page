@@ -1,0 +1,33 @@
+@use "../abstracts" as *;
+
+.about{
+
+    &__img{
+        padding: 4rem 1rem;   
+
+        @include media-query(large){
+         transform: translateX(-15%);
+        }
+    }
+
+    &__info{
+        padding: 1.5rem 0;
+
+        @include media-query(large){
+            text-align: left;
+        }
+    }
+
+    @include media-query(large){
+        
+        &__content{
+            display: flex;
+        }
+
+        &__column{
+            padding: 4rem 0;
+            width: 22rem;
+        }
+    }
+
+}

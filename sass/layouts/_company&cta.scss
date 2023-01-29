@@ -1,0 +1,32 @@
+@use "../abstracts" as *;
+
+.company{
+    
+    padding: 3.2rem 5rem;
+    @include flex(null, column);
+
+    &__heading--sc-only:not(:focus):not(:active){
+        clip: rect(0 0 0 0); 
+        clip-path: inset(50%);
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap; 
+        width: 1px;
+    }
+    
+
+    &__logo{
+        padding: 2rem 0;
+    }
+    
+    @include media-query(large){
+        @include flex(space-around, row);
+    }
+}
+
+// CTA
+
+.cta{
+    padding: 4rem 0;
+}

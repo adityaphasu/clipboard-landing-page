@@ -1,32 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&display=swap');
+@use "./variables" as *;
+@use "./functions" as *;
 
-//  COLORS
-
-$white: hsl(0, 0%, 100%);
-$strong-cyan:hsl(171, 66%, 44%);
-$light-blue: hsl(233, 100%, 69%);
-$dark-grayish-blue: hsl(210, 10%, 33%);
-$grayish-blue: hsl(201, 11%, 66%);
-$pale-gray: hsl(203, 29%, 95%);
-
-// FONT
-
-$font-family: 'Bai Jamjuree', sans-serif;
-$font-weight-bold: 600;
-
-// BREAKPOINTS
-
-$breakpoints: (
-    tablet : 30rem,
-    desktop: 50rem
-);
-
-// MIXINS
-
-@mixin p-top-btm($value){
-    padding-top: $value;
-    padding-bottom: $value;
-}
 
 @mixin margin-auto{
     margin: auto;
@@ -57,10 +31,4 @@ $breakpoints: (
     @media screen and (min-width: #{$mq-breakpoint}){
         @content;
     }
-}
-
-// FUNCTIONS
-
-@function darken-color($color){
-    @return darken($color, 10%);
 }

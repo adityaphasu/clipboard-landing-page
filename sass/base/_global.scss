@@ -1,0 +1,54 @@
+@use "../abstracts" as *;
+
+body{
+    min-height: 100vh;
+    text-align: center;
+    font-size: 1rem;
+    font-family: $font-family;
+}
+
+main{
+    padding: 4.2rem 2.2rem; 
+}
+
+section{
+    padding: 2rem 0;
+}
+
+h1,
+h2,
+h3{
+    font-weight: $font-weight-bold;
+    color: $dark-grayish-blue;
+    padding: 1rem 0;
+}
+
+h3{
+  font-size: 1.3rem;
+}
+
+p{   
+    color: $grayish-blue;
+    @include margin-auto; 
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+li{
+    list-style: none;
+}
+
+@include media-query(large){
+    
+    h2{
+        font-size: 1.9rem;
+    }
+
+    :is(.about, .access, .features, .cta) > p {
+     width: 40rem;
+    }
+
+}  

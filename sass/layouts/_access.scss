@@ -1,0 +1,9 @@
+@use "../abstracts" as *;
+
+.access__img{
+    padding: 3rem 0;  
+
+    @include media-query(large){
+        @include margin-auto;
+    }
+}
