@@ -1,5 +1,4 @@
 @use "./variables" as *;
-@use "./functions" as *;
 
 
 @mixin margin-auto{
@@ -7,7 +6,7 @@
 }
 
 @mixin box-shadow($top, $left, $blur, $color){
-    box-shadow: $top $left $blur darken-color($color);
+    box-shadow: $top $left $blur darken($color, 10%);
 }
 
 @mixin flex($justify, $direction){
