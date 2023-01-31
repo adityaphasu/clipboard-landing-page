@@ -1,13 +1,21 @@
 @use "./variables" as *;
 
+// Mixin for  setting margin to auto
 
 @mixin margin-auto{
     margin: auto;
 }
 
+// Mixin for setting box-shadow
+// takes top, left, blur and color args for setting properties
+// uses darken function to darken the color
+
 @mixin box-shadow($top, $left, $blur, $color){
     box-shadow: $top $left $blur darken($color, 10%);
 }
+
+// Mixin for setting display to flex
+// takes 2 args for setting justify-content and flex-direction
 
 @mixin flex($justify, $direction){
     display: flex;
@@ -16,17 +24,23 @@
     flex-direction: $direction;
 }
 
+// Mixin for setting display to grid
+// takes an arg to set column length
+  
 @mixin grid($value){
     display: grid;
     grid-template-columns: repeat(3, $value);
 }
 
+// Mixin to manage responsive breakpoints
+
 @mixin media-query($mq-breakpoint, $mq-breakpoints: $breakpoints){
-    
+    // If the key exists in the map
+    // set mq-breakpoint to the corresponding key from the $breakpoints map
     @if map-has-key($mq-breakpoints, $mq-breakpoint ){
       $mq-breakpoint: map-get($mq-breakpoints, $mq-breakpoint);
     }
-
+    // Prints a media query based on the value
     @media screen and (min-width: #{$mq-breakpoint}){
         @content;
     }
